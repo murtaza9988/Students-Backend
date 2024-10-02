@@ -162,5 +162,3 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 BASE_FRONTEND_URL = 'http://localhost:5173'
-GOOGLE_OAUTH2_CLIENT_ID = '852426837683-m863004o06lqq04938c7bfv82aoca99s.apps.googleusercontent.com'
-GOOGLE_OAUTH2_CLIENT_SECRET = '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'
