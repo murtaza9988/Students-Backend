@@ -5,6 +5,7 @@ from .models import students  # Ensure this import matches your model name
 from.models import singup
 from django.contrib.auth.hashers import check_password
 
+from .models import StudentAdmission
 class itemserializer(serializers.ModelSerializer):
     class Meta:
         model = students 
@@ -36,3 +37,9 @@ class LoginSerializer(serializers.Serializer):
 
         data["user"] = user  # Add the user object to the validated data
         return data
+
+
+class StudentAdmissionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = StudentAdmission
+        fields = ['id', 'student_name', 'email', 'class_name', 'date_of_birth', 'address']

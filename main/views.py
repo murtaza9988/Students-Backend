@@ -11,6 +11,9 @@ from .serializers import LoginSerializer
 from rest_framework.decorators import action # Ensure you have this serializer defined
 from django.contrib.auth.hashers import check_password
 
+
+from .models import StudentAdmission
+from .serializers import StudentAdmissionSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 class ItemViewSet(viewsets.ModelViewSet):
     permission_classes = [AllowAny]
@@ -63,3 +66,9 @@ class LoginViewSet(viewsets.ViewSet):
             }, status=status.HTTP_200_OK)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+
+class StudentAdmissionViewSet(viewsets.ModelViewSet):
+    queryset = StudentAdmission.objects.all()
+    serializer_class = StudentAdmissionSerializer

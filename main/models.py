@@ -51,9 +51,15 @@ class  ClassStudent(models.Model):
 
 
 
-
-
-
+class StudentAdmission(models.Model):
+     student_name = models.CharField(max_length=100) 
+     email = models.EmailField(unique=True) 
+     class_name = models.CharField(max_length=50) # Adjust max_length as needed
+     date_of_birth = models.DateField() 
+     address = models.TextField() 
+    
+     def __str__(self): 
+         return self.student_name
 
 
 
